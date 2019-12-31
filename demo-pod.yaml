@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: demo-pod
+spec:
+  volumes:
+  - name: shared-data
+    emptyDir: {}
+  containers:
+  - name: nginx
+    image: nginx
+  - name: mydemo
+    image: centos:7
+    command: ["ping", "8.8.8.8"]
